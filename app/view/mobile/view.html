@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?=$siteName?></title>
+    <style>
+        #page {
+            width: 350px;
+            height: 100vh;
+            margin: 0 auto;
+            display: block;
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translate(-50%,0);
+            -moz-transform: translate(-50%,0);
+            transform: translate(-50%,0);
+        }
+    </style>
+</head>
+<body>
+<iframe id="page" src="<?=$url?>" frameborder="0"></iframe>
+</body>
+</html>

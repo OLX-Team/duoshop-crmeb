@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+    <title>运行环境检测 - Powered by CRMEB </title>
+<link rel="stylesheet" href="/install/css/install.css?v=9.0" />
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <h1 class="logo">logo</h1>
+        <div class="icon_install">安装向导</div>
+        <div class="version"></div>
+    </div>
+  <section class="section">
+    <div class="step">
+      <ul>
+        <li class="current"><em>1</em>检测环境</li>
+        <li><em>2</em>创建数据</li>
+        <li><em>3</em>完成安装</li>
+      </ul>
+    </div>
+    <div class="server">
+      <table width="100%">
+        <tr>
+          <td class="td1">环境检测</td>
+          <td class="td1" width="25%">推荐配置</td>
+          <td class="td1" width="25%">当前状态</td>
+          <td class="td1" width="25%">最低要求</td>
+        </tr>
+
+        <tr>
+          <td>PHP版本</td>
+          <td>><?php echo 7.2; ?></td>
+          <td><span class="correct_span">&radic;</span> <?php echo $phpv; ?></td>
+          <td><?php echo 7.2; ?>以上</td>
+        </tr>
+        <tr>
+          <td>附件上传</td>
+          <td>>2M</td>
+          <td><?php echo $uploadSize; ?></td>
+          <td>不限制</td>
+        </tr>
+        <tr>
+          <td>session</td>
+          <td>开启</td>
+          <td><?php echo $session; ?></td>
+          <td>开启</td>
+        </tr>
+        <tr>
+          <td>safe_mode</td>
+          <td>基础配置</td>
+          <td><?php echo $safe_mode; ?></td>
+          <td>启用</td>
+        </tr>
+        <tr>
+          <td>GD库</td>
+          <td>必须开启</td>
+          <td><?php echo $gd; ?></td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <td>mysqli</td>
+          <td>必须开启</td>
+          <td><?php echo $mysql; ?></td>
+          <td>启用</td>
+        </tr>
+          <tr>
+              <td>curl_init</td>
+              <td>必须扩展</td>
+              <td><?php echo $curl; ?></td>
+              <td>启用</td>
+          </tr>
+          <tr>
+              <td>zip</td>
+              <td>必须扩展</td>
+              <td><?php echo $zip; ?></td>
+              <td>启用</td>
+          </tr>
+          <tr>
+              <td>bcmath</td>
+              <td>必须扩展</td>
+              <td><?php echo $bcmath; ?></td>
+              <td>启用</td>
+          </tr>
+          <tr>
+              <td>swoole</td>
+              <td>必须扩展</td>
+              <td><?php echo $swoole; ?></td>
+              <td>启用</td>
+          </tr>
+          <tr>
+              <td>swoole_loader</td>
+              <td>必须扩展</td>
+              <td><?php echo $swooleCompiler; ?></td>
+              <td>启用</td>
+          </tr>
+          <tr>
+              <td>redis</td>
+              <td>必须扩展</td>
+              <td><?php echo $redis; ?></td>
+              <td>启用</td>
+          </tr>
+          <tr>
+              <td>openssl</td>
+              <td>必须扩展</td>
+              <td><?php echo $openssl; ?></td>
+              <td>启用</td>
+          </tr>
+          <tr>
+              <td>fileinfo</td>
+              <td>必须扩展</td>
+              <td><?php echo $finfo_open; ?></td>
+              <td>启用</td>
+          </tr>
+      </table>
+
+      <table width="100%">
+        <tr>
+          <td class="td1" width="70%">函数检测必须开启</td>
+          <td class="td1" width="30%">当前状态</td>
+        </tr>
+        <tr>
+          <td>file_put_contents</td>
+          <td><?php echo $file_put_contents; ?></td>
+        </tr>
+        <tr>
+          <td>imagettftext</td>
+          <td><?php echo $imagettftext; ?></td>
+        </tr>
+      <tr>
+          <td>proc_open</td>
+          <td><?php echo $proc_open; ?></td>
+      </tr>
+      <tr>
+          <td>pcntl_alarm</td>
+          <td><?php echo $pcntl_alarm; ?></td>
+      </tr>
+      <tr>
+          <td>pcntl_signal</td>
+          <td><?php echo $pcntl_signal; ?></td>
+      </tr>
+      </table>
+    </div>
+    <div class="bottom tac">
+	    <a href="/install/environment" onClick="javascript:alert('记得先重启服务')"class="btn">重新检测</a>
+	    <?php if($err>0){?>
+	    <a href="javascript:void(0)" onClick="javascript:alert('安装环境检测未通过，请检查')" class="btn" style="background: gray;">下一步</a>
+	    <?php }else{?>
+	    <a href="/install/databases" class="btn">下一步</a>
+	    <?php }?>
+    </div>
+  </section>
+</div>
+</body>
+<div class="footer"> &copy; 2014-2022 <a href="http://www.crmeb.com" target="_blank">www.crmeb.com</a> 西安众邦网络科技有限公司出品</div>
+</html>

@@ -1,0 +1,5 @@
+https://www.apifox.cn/apidoc/shared-c7840840-4906-4b65-b9b4-ae172c8720b8   平台端
+
+https://www.apifox.cn/apidoc/shared-060f9912-7573-474b-881a-e97ff93f184c   商户端
+
+https://www.apifox.cn/apidoc/shared-cc17a19a-5326-44e4-9b15-2d35499e40d4    移动端

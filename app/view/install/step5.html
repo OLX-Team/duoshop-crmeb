@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+    <title>安装许可协议 - Powered by CRMEB </title>
+<link rel="stylesheet" href="/install/css/install.css?v=9.0" />
+<script src="/install/js/jquery.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <h1 class="logo">logo</h1>
+        <div class="icon_install">安装向导</div>
+        <div class="version"></div>
+    </div>
+  <section class="section">
+    <div class="">
+      <div class="success_tip cc"> <a href="<?php echo '/'.$system;?>" class="f16 b">安装完成，请重启服务后，进入后台管理</a>
+		<p>为了您站点的安全，安装完成后即可将网站根目录下[public目录下]的“install”文件夹删除，或者/install/目录下创建install.lock文件防止重复安装。<p>
+      </div>
+	        <div class="bottom tac">
+	        <a href="/" class="btn">进入前台</a>
+	        <a href="<?php echo '/'.$system;?>" class="btn">进入总后台</a>
+	        <a href="<?php echo '/'.$merchant;?>" class="btn btn_submit J_install_btn">进入商户后台</a>
+      </div>
+      <div class=""></div>
+    </div>
+  </section>
+</div>
+<script>
+    $(function(){
+        $.ajax({
+            type: "POST",
+            url: "http://shop.crmeb.net/index.php/admin/server.upgrade_api/updatewebinfo",
+            header:{
+                'Access-Control-Allow-Origin':'*',
+                'Access-Control-Allow-Headers':'X-Requested-With',
+                'Access-Control-Allow-Methods':'PUT,POST,GET,DELETE,OPTIONS'
+            },
+            data: {
+                host: '<?php echo $host;?>',
+                https: '<?php echo 'http://'.$host;?>',
+                version: '<?php echo $version; ?>',
+                ip: <?php echo json_encode($ip);?>
+            },
+            dataType: 'json',
+            success: function(){}
+        });
+    });
+</script>
+</body>
+<div class="footer"> &copy; 2014-2022 <a href="http://www.crmeb.com" target="_blank">www.crmeb.com</a> 西安众邦网络科技有限公司出品</div>
+</html>

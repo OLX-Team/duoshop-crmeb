@@ -1,0 +1,22 @@
+{
+    "name": "ucloud/ufile-php-sdk",
+    "type": "library",
+    "description": "UCloud Resource (Cloud) Storage SDK for PHP",
+    "keywords": ["ucloud", "storage", "sdk", "cloud"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MadScientist",
+            "email": "superdinghh@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6.0",
+        "ucloud/ufile-php-sdk": "1.0.1"
+    },
+    "autoload": {
+        "psr-4": {"UCloud\\": "src/"},
+        "files": ["src/functions.php"]
+    }
+}
